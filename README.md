@@ -1,2 +1,3 @@
-# mdb-world-22-dashboard-embedding-tutorial
-Dashboard Embedding tutorial for MongoDB World 2022
+# MongoDB World 2022 - MongoDB Charts
+
+Dashboard Embedding tutorial for MongoDB World 2022.

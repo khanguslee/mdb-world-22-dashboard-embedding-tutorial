@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "Dashboard Embedding tutorial for MongoDB World 2022",
   "main": "index.js",
+  "source": "src/index.html",
   "scripts": {
+    "start": "parcel",
+    "build": "parcel build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/khanguslee/mdb-world-22-dashboard-embedding-tutorial.git"
@@ -15,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/khanguslee/mdb-world-22-dashboard-embedding-tutorial/issues"
   },
-  "homepage": "https://github.com/khanguslee/mdb-world-22-dashboard-embedding-tutorial#readme"
+  "homepage": "https://github.com/khanguslee/mdb-world-22-dashboard-embedding-tutorial#readme",
+  "devDependencies": {
+    "parcel": "^2.4.1"
+  }
 }

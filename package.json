@@ -5,11 +5,11 @@
   "main": "index.js",
   "source": "src/index.html",
   "scripts": {
-    "start": "parcel",
+    "start": "parcel src/index.html --open",
     "build": "parcel build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "browserslist": "since 2022",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/khanguslee/mdb-world-22-dashboard-embedding-tutorial.git"
@@ -21,6 +21,13 @@
   },
   "homepage": "https://github.com/khanguslee/mdb-world-22-dashboard-embedding-tutorial#readme",
   "devDependencies": {
-    "parcel": "^2.4.1"
+    "crypto-browserify": "^3.12.0",
+    "events": "^3.3.0",
+    "parcel": "^2.4.1",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0"
+  },
+  "dependencies": {
+    "@mongodb-js/charts-embed-dom": "^2.2.0"
   }
 }

@@ -8,13 +8,14 @@
 
   <body class="h-full">
     <!-- Navigation Bar -->
-    <nav class="bg-white border-gray-200 rounded p-4">
-      <div class="container">
+    <nav class="bg-white border-gray-200 rounded px-4 py-2 flex justify-between items-center">
+      <span class="font-semibold whitespace-nowrap py-2">
         <i class="bi bi-pie-chart"></i>
-        <span class="font-semibold whitespace-nowrap">
-          ChartyCo Admin
-        </span>
-      </div>
+        ChartyCo Admin
+      </span>
+      <button class="text-xs rounded border border-transparent hover:border-slate-200 px-4 py-2">
+        Log Out
+      </button>
     </nav>
 
     <!-- Login Page -->
@@ -41,7 +42,7 @@
         <div id="dashboard" class="h-full"></div>
       </main>
     </div>
-    <script type="module" src="index.js"></script>
 
+    <script type="module" src="index.js"></script>
   </body>
 </html>

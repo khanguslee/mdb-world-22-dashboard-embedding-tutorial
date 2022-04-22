@@ -8,7 +8,7 @@ const sdk = new ChartsEmbedSDK({
 const dashboard = sdk.createDashboard({
   dashboardId: "6252bcf4-70f4-400e-8a06-68f6a46e26d0",
   showAttribution: false,
-  widthMode: "fixed",
+  widthMode: "scale",
   heightMode: "scale",
 });
 

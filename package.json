@@ -28,6 +28,7 @@
     "stream-browserify": "^3.0.0"
   },
   "dependencies": {
-    "@mongodb-js/charts-embed-dom": "^2.2.0"
+    "@mongodb-js/charts-embed-dom": "^2.2.0",
+    "jsonwebtoken": "^8.5.1"
   }
 }

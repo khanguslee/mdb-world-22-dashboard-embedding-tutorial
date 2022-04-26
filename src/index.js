@@ -1,5 +1,15 @@
 // API Documentation found in https://www.npmjs.com/package/@mongodb-js/charts-embed-dom
 import ChartsEmbedSDK from "@mongodb-js/charts-embed-dom";
+import { login, logout } from "./authenticate";
+import { showDashboardPage, showLoginPage } from "./helper";
+
+function _setup() {
+  window.sessionStorage.getItem("jwtToken")
+    ? showDashboardPage()
+    : showLoginPage();
+  document.getElementById("btn-login").addEventListener("click", login);
+  document.getElementById("btn-logout").addEventListener("click", logout);
+}
 
 const sdk = new ChartsEmbedSDK({
   baseUrl: "https://charts.mongodb.com/charts-project-0-uvgyb",
@@ -10,10 +20,20 @@ const dashboard = sdk.createDashboard({
   showAttribution: false,
   widthMode: "scale",
   heightMode: "scale",
+  getUserToken: () => {
+    return window.sessionStorage.getItem("jwtToken");
+  },
 });
+
+const dashboardPage = document.getElementById("dashboard-page");
+const loginPage = document.getElementById("login-page");
 
 async function renderDashboard() {
   await dashboard.render(document.getElementById("dashboard"));
 }
 
-renderDashboard().catch((e) => window.alert(e.message));
+_setup();
+
+renderDashboard();
+
+export { dashboard, dashboardPage, loginPage, usernameInput, passwordInput };

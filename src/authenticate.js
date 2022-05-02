@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { showLoginPage } from "./helper";
+import { toggleView } from "./helper";
 
 const USERS_DB = [
   {
@@ -25,12 +25,11 @@ export const login = function () {
       algorithm: "HS256",
     }
   );
-
   window.sessionStorage.setItem("jwtToken", token);
   window.location.reload();
 };
 
 export const logout = function () {
   window.sessionStorage.removeItem("jwtToken");
-  showLoginPage();
+  toggleView(false);
 };

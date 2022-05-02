@@ -2,11 +2,10 @@
   "name": "mdb-world-22-dashboard-embedding-tutorial",
   "version": "1.0.0",
   "description": "Dashboard Embedding tutorial for MongoDB World 2022",
-  "main": "index.js",
-  "source": "src/index.html",
+  "default": "index.html",
   "scripts": {
-    "start": "parcel src/index.html --open",
-    "build": "parcel build",
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "browserslist": "since 2022",
@@ -25,7 +24,8 @@
     "events": "^3.3.0",
     "parcel": "^2.4.1",
     "process": "^0.11.10",
-    "stream-browserify": "^3.0.0"
+    "stream-browserify": "^3.0.0",
+    "util": "^0.12.4"
   },
   "dependencies": {
     "@mongodb-js/charts-embed-dom": "^2.2.0",

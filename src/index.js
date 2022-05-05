@@ -13,18 +13,31 @@ function _setup() {
   logoutBtn.addEventListener("click", logout);
 }
 
+/**
+ * START
+ */
+
 const sdk = new ChartsEmbedSDK({
   baseUrl: "https://charts.mongodb.com/charts-project-0-uvgyb",
 });
-const dashboard = sdk.createDashboard({
-  dashboardId: "6252bcf4-70f4-400e-8a06-68f6a46e26d0",
+
+const addedDashboardOptions = {
   showAttribution: false,
   widthMode: "scale",
   heightMode: "scale",
+};
+
+const dashboard = sdk.createDashboard({
+  dashboardId: "6252bcf4-70f4-400e-8a06-68f6a46e26d0",
+  ...addedDashboardOptions,
   getUserToken: () => {
     return window.sessionStorage.getItem("jwtToken") || "";
   },
 });
+
+/**
+ * END
+ */
 
 async function renderDashboard() {
   await dashboard.render(document.getElementById("dashboard"));

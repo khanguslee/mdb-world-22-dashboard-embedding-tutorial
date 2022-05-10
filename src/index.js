@@ -46,5 +46,3 @@ async function renderDashboard() {
 _setup();
 
 renderDashboard();
-
-export { dashboard };

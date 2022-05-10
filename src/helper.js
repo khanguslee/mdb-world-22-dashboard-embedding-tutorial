@@ -1,3 +1,5 @@
+import { enableLogin } from "./config";
+
 const _getComponents = function () {
   const dashboardPage = document.getElementById("dashboard-page");
   const loginPage = document.getElementById("login-page");
@@ -7,9 +9,9 @@ const _getComponents = function () {
 
 export const toggleView = function (isLoggedIn) {
   const { dashboardPage, loginPage, logoutBtn } = _getComponents();
-  if (isLoggedIn) {
+  if (isLoggedIn || !enableLogin) {
     dashboardPage.classList.remove("hidden");
-    logoutBtn.classList.remove("hidden");
+    if (enableLogin) logoutBtn.classList.remove("hidden");
     loginPage.classList.add("hidden");
   } else {
     loginPage.classList.remove("hidden");

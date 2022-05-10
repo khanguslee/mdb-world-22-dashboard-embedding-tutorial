@@ -35,6 +35,23 @@ const dashboard = sdk.createDashboard({
   },
 });
 
+const toggleDarkMode = async () => {
+  // Toggle dark mode for dashboard via Charts SDK
+  const currentTheme = await dashboard.getTheme();
+  dashboard.setTheme(currentTheme === "dark" ? "light" : "dark");
+
+  // Toggle dark mode icon
+  const darkModeIcon = document.getElementById("icon-dark-mode");
+  darkModeIcon.classList.toggle("bi-moon-fill");
+  darkModeIcon.classList.toggle("bi-sun-fill");
+
+  // Toggle dark mode for ALL tailwind components
+  document.documentElement.classList.toggle("dark");
+};
+
+const darkModeBtn = document.getElementById("btn-dark-mode");
+darkModeBtn.addEventListener("click", toggleDarkMode);
+
 /**
  * END
  */

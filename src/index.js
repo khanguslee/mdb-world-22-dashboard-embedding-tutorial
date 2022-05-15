@@ -1,17 +1,7 @@
 // API Documentation found in https://www.npmjs.com/package/@mongodb-js/charts-embed-dom
 import ChartsEmbedSDK from "@mongodb-js/charts-embed-dom";
-import { login, logout } from "./authenticate";
-import { toggleView } from "./helper";
 
-function _setup() {
-  toggleView(!!window.sessionStorage.getItem("jwtToken"));
-
-  const loginBtn = document.getElementById("btn-login");
-  const logoutBtn = document.getElementById("btn-logout");
-
-  loginBtn.addEventListener("click", login);
-  logoutBtn.addEventListener("click", logout);
-}
+import { setupLoginPage } from "./helper";
 
 /**
  * START
@@ -49,17 +39,16 @@ const toggleDarkMode = async () => {
   document.documentElement.classList.toggle("dark");
 };
 
-const darkModeBtn = document.getElementById("btn-dark-mode");
-darkModeBtn.addEventListener("click", toggleDarkMode);
+async function renderDashboard() {
+  await dashboard.render(document.getElementById("dashboard"));
+}
 
 /**
  * END
  */
 
-async function renderDashboard() {
-  await dashboard.render(document.getElementById("dashboard"));
-}
+const darkModeBtn = document.getElementById("btn-dark-mode");
+darkModeBtn.addEventListener("click", toggleDarkMode);
 
-_setup();
-
+setupLoginPage();
 renderDashboard();

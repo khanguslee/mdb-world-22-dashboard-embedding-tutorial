@@ -38,7 +38,7 @@ const dashboard = sdk.createDashboard({
 const toggleDarkMode = async () => {
   // Toggle dark mode for dashboard via Charts SDK
   const currentTheme = await dashboard.getTheme();
-  dashboard.setTheme(currentTheme === "dark" ? "light" : "dark");
+  await dashboard.setTheme(currentTheme === "dark" ? "light" : "dark");
 
   // Toggle dark mode icon
   const darkModeIcon = document.getElementById("icon-dark-mode");

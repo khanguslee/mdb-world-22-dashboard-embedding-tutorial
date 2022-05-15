@@ -21,7 +21,7 @@ const sdk = new ChartsEmbedSDK({
   baseUrl: "https://charts.mongodb.com/charts-project-0-uvgyb",
 });
 
-const addedDashboardOptions = {
+const dashboardOptions = {
   showAttribution: false,
   widthMode: "scale",
   heightMode: "scale",
@@ -29,7 +29,7 @@ const addedDashboardOptions = {
 
 const dashboard = sdk.createDashboard({
   dashboardId: "6252bcf4-70f4-400e-8a06-68f6a46e26d0",
-  ...addedDashboardOptions,
+  ...dashboardOptions,
   getUserToken: () => {
     return window.sessionStorage.getItem("jwtToken") || "";
   },

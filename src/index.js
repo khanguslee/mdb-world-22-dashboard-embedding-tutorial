@@ -1,34 +1,12 @@
 // API Documentation found in https://www.npmjs.com/package/@mongodb-js/charts-embed-dom
-import ChartsEmbedSDK from "@mongodb-js/charts-embed-dom";
-
 import { setupLoginPage } from "./helper";
 
 /**
  * START
  */
 
-const sdk = new ChartsEmbedSDK({
-  baseUrl: "https://charts.mongodb.com/charts-project-0-uvgyb",
-});
-
-const dashboardOptions = {
-  showAttribution: false,
-  widthMode: "scale",
-  heightMode: "scale",
-};
-
-const dashboard = sdk.createDashboard({
-  dashboardId: "6252bcf4-70f4-400e-8a06-68f6a46e26d0",
-  ...dashboardOptions,
-  getUserToken: () => {
-    return window.sessionStorage.getItem("jwtToken") || "";
-  },
-});
-
 const toggleDarkMode = async () => {
-  // Toggle dark mode for dashboard via Charts SDK
-  const currentTheme = await dashboard.getTheme();
-  await dashboard.setTheme(currentTheme === "dark" ? "light" : "dark");
+  // TODO: Toggle dark mode for dashboard via Charts SDK
 
   // Toggle dark mode icon
   const darkModeIcon = document.getElementById("icon-dark-mode");
@@ -38,11 +16,6 @@ const toggleDarkMode = async () => {
   // Toggle dark mode for ALL tailwind components
   document.documentElement.classList.toggle("dark");
 };
-
-async function renderDashboard() {
-  await dashboard.render(document.getElementById("dashboard"));
-}
-
 /**
  * END
  */
@@ -51,4 +24,3 @@ const darkModeBtn = document.getElementById("btn-dark-mode");
 darkModeBtn.addEventListener("click", toggleDarkMode);
 
 setupLoginPage();
-renderDashboard();

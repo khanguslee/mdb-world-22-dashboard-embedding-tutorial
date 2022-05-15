@@ -1,3 +1,4 @@
+import { login, logout } from "./authenticate";
 import { enableLogin } from "./config";
 
 const _getComponents = function () {
@@ -19,3 +20,13 @@ export const toggleView = function (isLoggedIn) {
     logoutBtn.classList.add("hidden");
   }
 };
+
+export function setupLoginPage() {
+  toggleView(!!window.sessionStorage.getItem("jwtToken"));
+
+  const loginBtn = document.getElementById("btn-login");
+  const logoutBtn = document.getElementById("btn-logout");
+
+  loginBtn.addEventListener("click", login);
+  logoutBtn.addEventListener("click", logout);
+}

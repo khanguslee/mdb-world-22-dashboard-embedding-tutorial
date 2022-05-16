@@ -3,6 +3,10 @@ import { toggleView } from "./helper";
 
 const USERS_DB = [
   {
+    email: "admin@chartyco.com",
+    location: "All",
+  },
+  {
     email: "jason@chartyco.com",
     location: "New York",
   },
@@ -16,6 +20,11 @@ export const login = function () {
   const username = document.getElementById("username").value;
 
   const user = USERS_DB.find((u) => u.email === username);
+
+  if (!user) {
+    window.alert("Invalid credentials");
+    return;
+  }
 
   const token = jwt.sign(
     { username, location: user ? user.location : "" },

@@ -16,11 +16,19 @@ const toggleDarkMode = async () => {
   // Toggle dark mode for ALL tailwind components
   document.documentElement.classList.toggle("dark");
 };
+
+const filterPurchaseMethod = async (event) => {
+  // TODO: Filter charts by purchase method
+};
+
 /**
  * END
  */
 
 const darkModeBtn = document.getElementById("btn-dark-mode");
 darkModeBtn.addEventListener("click", toggleDarkMode);
+
+const purchaseMethodSelect = document.getElementById("purchaseMethod");
+purchaseMethodSelect.addEventListener("change", filterPurchaseMethod);
 
 setupLoginPage();

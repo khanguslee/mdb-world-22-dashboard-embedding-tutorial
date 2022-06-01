@@ -5,8 +5,10 @@ import { setupLoginPage } from "./helper";
  * START
  */
 
+// TASK 3: Set options via Embed Dashboard options
+
 const toggleDarkMode = async () => {
-  // TODO: Toggle dark mode for dashboard via Charts SDK
+  // TASK 3: Toggle dark mode for dashboard via Charts SDK
 
   // Toggle dark mode icon
   const darkModeIcon = document.getElementById("icon-dark-mode");
@@ -18,7 +20,7 @@ const toggleDarkMode = async () => {
 };
 
 const filterPurchaseMethod = async (event) => {
-  // TODO: Filter charts by purchase method
+  // TASK 4: Filter charts by purchase method
 };
 
 /**

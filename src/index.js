@@ -14,7 +14,6 @@ const sdk = new ChartsEmbedSDK({
 const dashboardOptions = {
   showAttribution: false,
   widthMode: "scale",
-  heightMode: "scale",
 };
 
 const dashboard = sdk.createDashboard({
@@ -39,6 +38,15 @@ const toggleDarkMode = async () => {
   document.documentElement.classList.toggle("dark");
 };
 
+const filterPurchaseMethod = async (event) => {
+  const { value } = event.target;
+  const charts = await dashboard.getAllCharts();
+  charts.forEach(async (chart) => {
+    const filter = value === "All" ? {} : { purchaseMethod: value };
+    await chart.setFilter(filter);
+  });
+};
+
 async function renderDashboard() {
   await dashboard.render(document.getElementById("dashboard"));
 }
@@ -49,6 +57,9 @@ async function renderDashboard() {
 
 const darkModeBtn = document.getElementById("btn-dark-mode");
 darkModeBtn.addEventListener("click", toggleDarkMode);
+
+const purchaseMethodSelect = document.getElementById("purchaseMethod");
+purchaseMethodSelect.addEventListener("change", filterPurchaseMethod);
 
 setupLoginPage();
 renderDashboard();

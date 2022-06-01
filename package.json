@@ -22,13 +22,13 @@
   "devDependencies": {
     "crypto-browserify": "^3.12.0",
     "events": "^3.3.0",
-    "parcel": "^2.4.1",
+    "parcel": "^2.5.0",
     "process": "^0.11.10",
     "stream-browserify": "^3.0.0",
     "util": "^0.12.4"
   },
   "dependencies": {
-    "@mongodb-js/charts-embed-dom": "^2.2.0",
+    "@mongodb-js/charts-embed-dom": "^2.3.0-beta.1",
     "jsonwebtoken": "^8.5.1"
   }
 }

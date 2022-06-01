@@ -5,8 +5,10 @@ import { setupLoginPage } from "./helper";
  * START
  */
 
+// TASK 3: Set options via Embed Dashboard options
+
 const toggleDarkMode = async () => {
-  // TODO: Toggle dark mode for dashboard via Charts SDK
+  // TASK 3: Toggle dark mode for dashboard via Charts SDK
 
   // Toggle dark mode icon
   const darkModeIcon = document.getElementById("icon-dark-mode");
@@ -16,11 +18,19 @@ const toggleDarkMode = async () => {
   // Toggle dark mode for ALL tailwind components
   document.documentElement.classList.toggle("dark");
 };
+
+const filterPurchaseMethod = async (event) => {
+  // TASK 4: Filter charts by purchase method
+};
+
 /**
  * END
  */
 
 const darkModeBtn = document.getElementById("btn-dark-mode");
 darkModeBtn.addEventListener("click", toggleDarkMode);
+
+const purchaseMethodSelect = document.getElementById("purchaseMethod");
+purchaseMethodSelect.addEventListener("change", filterPurchaseMethod);
 
 setupLoginPage();

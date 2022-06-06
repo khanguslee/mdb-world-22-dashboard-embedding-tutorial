@@ -32,7 +32,7 @@ export async function setupLoginPage() {
   loginBtn.addEventListener("click", login);
   logoutBtn.addEventListener("click", logout);
 
-  if (isLoggedIn) {
+  if (isLoggedIn || !enableLogin) {
     await renderDashboard();
   } else {
     loginBtn.addEventListener("click", renderDashboard);

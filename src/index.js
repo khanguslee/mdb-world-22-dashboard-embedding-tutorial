@@ -47,9 +47,10 @@ const filterPurchaseMethod = async (event) => {
   });
 };
 
-async function renderDashboard() {
-  await dashboard.render(document.getElementById("dashboard"));
-}
+export const renderDashboard = async () => {
+  const dashboardElement = document.getElementById("dashboard");
+  await dashboard.render(dashboardElement);
+};
 
 /**
  * END
@@ -62,4 +63,3 @@ const purchaseMethodSelect = document.getElementById("purchaseMethod");
 purchaseMethodSelect.addEventListener("change", filterPurchaseMethod);
 
 setupLoginPage();
-renderDashboard();

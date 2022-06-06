@@ -24,6 +24,11 @@ const dashboard = sdk.createDashboard({
   },
 });
 
+export const renderDashboard = async () => {
+  const dashboardElement = document.getElementById("dashboard");
+  await dashboard.render(dashboardElement);
+};
+
 const toggleDarkMode = async () => {
   // Toggle dark mode for dashboard via Charts SDK
   const currentTheme = await dashboard.getTheme();
@@ -45,11 +50,6 @@ const filterPurchaseMethod = async (event) => {
     const filter = value === "All" ? {} : { purchaseMethod: value };
     await chart.setFilter(filter);
   });
-};
-
-export const renderDashboard = async () => {
-  const dashboardElement = document.getElementById("dashboard");
-  await dashboard.render(dashboardElement);
 };
 
 /**

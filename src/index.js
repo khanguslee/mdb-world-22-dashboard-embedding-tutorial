@@ -7,6 +7,10 @@ import { setupLoginPage } from "./helper";
 
 // TASK 3: Set options via Embed Dashboard options
 
+export const renderDashboard = async () => {
+  //  Render dashboard here
+};
+
 const toggleDarkMode = async () => {
   // TASK 3: Toggle dark mode for dashboard via Charts SDK
 

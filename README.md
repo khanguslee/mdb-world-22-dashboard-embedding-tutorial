@@ -25,3 +25,12 @@ npm start
 ```
 
 Head to [http://localhost:1234](http://localhost:1234) to view the generated web application.
+
+## Documentation
+
+For more information about Atlas Charts, you can visit the following links:
+
+- [MongoDB Charts Docs](https://www.mongodb.com/docs/charts/)
+- [Embedding Dashboards](https://www.mongodb.com/docs/charts/embedding-dashboards/)
+- [Embedding SDK](https://www.mongodb.com/docs/charts/embedding-charts-sdk/)
+- [Embedding Error Codes](https://www.mongodb.com/docs/charts/embedded-chart-error-codes/)

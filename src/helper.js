@@ -1,5 +1,6 @@
 import { login, logout } from "./authenticate";
 import { enableLogin } from "./config";
+import { renderDashboard } from "./index";
 
 const _getComponents = function () {
   const dashboardPage = document.getElementById("dashboard-page");
@@ -21,12 +22,19 @@ export const toggleView = function (isLoggedIn) {
   }
 };
 
-export function setupLoginPage() {
-  toggleView(!!window.sessionStorage.getItem("jwtToken"));
+export async function setupLoginPage() {
+  const isLoggedIn = !!window.sessionStorage.getItem("jwtToken");
+  toggleView(isLoggedIn);
 
   const loginBtn = document.getElementById("btn-login");
   const logoutBtn = document.getElementById("btn-logout");
 
   loginBtn.addEventListener("click", login);
   logoutBtn.addEventListener("click", logout);
+
+  if (isLoggedIn || !enableLogin) {
+    await renderDashboard();
+  } else {
+    loginBtn.addEventListener("click", renderDashboard);
+  }
 }

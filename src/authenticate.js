@@ -4,7 +4,7 @@ import { toggleView } from "./helper";
 const USERS_DB = [
   {
     email: "admin@chartyco.com",
-    location: "All",
+    location: "",
   },
   {
     email: "jason@chartyco.com",

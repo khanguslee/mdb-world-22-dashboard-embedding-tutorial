@@ -24,6 +24,11 @@ const dashboard = sdk.createDashboard({
   },
 });
 
+export const renderDashboard = async () => {
+  const dashboardElement = document.getElementById("dashboard");
+  await dashboard.render(dashboardElement);
+};
+
 const toggleDarkMode = async () => {
   // Toggle dark mode for dashboard via Charts SDK
   const currentTheme = await dashboard.getTheme();
@@ -47,10 +52,6 @@ const filterPurchaseMethod = async (event) => {
   });
 };
 
-async function renderDashboard() {
-  await dashboard.render(document.getElementById("dashboard"));
-}
-
 /**
  * END
  */
@@ -62,4 +63,3 @@ const purchaseMethodSelect = document.getElementById("purchaseMethod");
 purchaseMethodSelect.addEventListener("change", filterPurchaseMethod);
 
 setupLoginPage();
-renderDashboard();

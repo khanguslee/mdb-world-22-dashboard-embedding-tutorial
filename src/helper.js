@@ -34,7 +34,5 @@ export async function setupLoginPage() {
 
   if (isLoggedIn || !enableLogin) {
     await renderDashboard();
-  } else {
-    loginBtn.addEventListener("click", renderDashboard);
   }
 }
